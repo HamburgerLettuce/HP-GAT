@@ -72,8 +72,8 @@ The expected directory structure is:
     │   ├── iowa/
     │   └── mur/
     │
-    ├── models/
-    ├── utils/
+    ├── model/
+    ├── util/
     ├── train_forecasting.py
     └── README.md
 
