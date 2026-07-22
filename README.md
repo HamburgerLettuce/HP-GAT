@@ -159,7 +159,7 @@ If you find this repository useful, please cite:
 @article{HPGAT2026,
   title={Hierarchical Patch Graph Attention Network for Runoff Forecasting},
   author={},
-  journal={Journal of Hydrology},
+  journal={ },
   year={2026}
 }
 ```
