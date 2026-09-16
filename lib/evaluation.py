@@ -187,7 +187,7 @@ def compute_all_losses(model, batch_dict, norm_dict=None, phase="train"):
     mse = compute_error(
         batch_dict["data_to_predict"], pred_y, 
         mask=batch_dict["mask_predicted_data"], 
-        func="MAE", reduce="mean",
+        func="MSE", reduce="mean",
         norm_dict=norm_dict if use_denorm else None
     )
 
@@ -225,7 +225,7 @@ def compute_all_losses(model, batch_dict, norm_dict=None, phase="train"):
     loss = compute_error(
         batch_dict["data_to_predict"], pred_y, 
         mask=batch_dict["mask_predicted_data"], 
-        func="MSE", reduce="mean",
+        func="MAE", reduce="mean",
         norm_dict=None
     )
 
