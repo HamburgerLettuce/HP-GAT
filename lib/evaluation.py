@@ -279,7 +279,7 @@ def evaluation(model, dataloader, n_batches, norm_dict=None):
 
 
 ​    
-        last_station_idx = 18  
+        last_station_idx = 30  
         flow_var_idx = 2       
     
         truth_flow = batch_dict["data_to_predict"][:, last_station_idx, :, flow_var_idx]  # (B, T) 
