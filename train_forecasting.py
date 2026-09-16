@@ -15,7 +15,7 @@ parser.add_argument('-n',  type=int, default=int(1e8), help="Size of the dataset
 parser.add_argument('--epoch', type=int, default=100, help="training epoches")
 parser.add_argument('--patience', type=int, default=10, help="patience for early stop")
 parser.add_argument('--history', type=int, default=72, help="number of hours (months for ushcn and ms for activity) as historical window")
-parser.add_argument('--pred_window', type=int, default=168, help="number of hours (months for ushcn) as pred window")
+parser.add_argument('--pred_window', type=int, default=72, help="number of hours (months for ushcn) as pred window")
 parser.add_argument('--logmode', type=str, default="a", help='File mode of logging.')
 parser.add_argument('--lr',  type=float, default=1e-4, help="Starting learning rate.")
 parser.add_argument('--w_decay', type=float, default=1e-5, help="weight decay.")
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     args.scale_patch_size = args.patch_size / (args.history + args.pred_window)
     args.task = 'forecasting'
     
-    model = HP_GAT(args, num_sites=num_stations, use_spatial=False).to(args.device)
+    model = HP_GAT(args, num_sites=num_stations, use_spatial=True).to(args.device)
     
     if 'norm_dict' in data_obj and 'topology_info' in data_obj["norm_dict"]:
         topology_info = data_obj["norm_dict"]['topology_info']
